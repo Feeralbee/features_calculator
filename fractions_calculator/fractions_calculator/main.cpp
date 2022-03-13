@@ -6,19 +6,34 @@
 
 int main() {
 
-	output_string(notification_index::welcome_phrase);
+	output_string_with_endl(notification_index::welcome_phrase);
 
 	try {
 		Fractions first_fraction;
 		Fractions second_fraction;
 		char arithmetic_action;
 		std::cin >> first_fraction >> arithmetic_action >> second_fraction;
-
 		switch (arithmetic_action) {
-		case '+': std::cout << first_fraction + second_fraction; break;
-		case '-': std::cout << first_fraction - second_fraction; break;
-		case '*': std::cout << first_fraction * second_fraction; break;
-		case '/': std::cout << first_fraction / second_fraction; break;
+		case '+': 
+			output_string_without_endl(notification_index::result);
+
+			std::cout << first_fraction + second_fraction; 
+			break;
+		case '-': 
+			output_string_without_endl(notification_index::result);
+
+			std::cout << first_fraction - second_fraction; 
+			break;
+		case '*': 
+			output_string_without_endl(notification_index::result);
+
+			std::cout << first_fraction * second_fraction; 
+			break;
+		case '/': 
+			output_string_without_endl(notification_index::result);
+
+			std::cout << first_fraction / second_fraction; 
+			break;
 		}
 	}
 	catch (std::exception& ex) {
