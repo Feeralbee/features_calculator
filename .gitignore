@@ -4,4 +4,4 @@ obj
 
 # Specific folders to ignore
 **/.vs
-fraction_calculator/packages
+**/packages
