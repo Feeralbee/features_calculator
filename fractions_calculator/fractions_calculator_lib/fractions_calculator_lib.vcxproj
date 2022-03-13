@@ -19,9 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
+    <ClCompile Include="notification.cpp" />
     <ClCompile Include="operation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="notification.h" />
     <ClInclude Include="operation.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">
