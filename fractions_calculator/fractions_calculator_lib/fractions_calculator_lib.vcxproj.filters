@@ -18,7 +18,7 @@
     <ClCompile Include="operation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="notification.cpp">
+    <ClCompile Include="output_strings_to_console.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
   </ItemGroup>
@@ -26,7 +26,7 @@
     <ClInclude Include="operation.h">
       <Filter>Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="notification.h">
+    <ClInclude Include="output_strings_to_console.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

@@ -19,11 +19,11 @@
     </ProjectConfiguration>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="notification.cpp" />
+    <ClCompile Include="output_strings_to_console.cpp" />
     <ClCompile Include="operation.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="notification.h" />
+    <ClInclude Include="output_strings_to_console.h" />
     <ClInclude Include="operation.h" />
   </ItemGroup>
   <PropertyGroup Label="Globals">

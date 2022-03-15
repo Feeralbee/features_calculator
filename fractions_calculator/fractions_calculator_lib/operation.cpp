@@ -1,5 +1,10 @@
 #include "operation.h"
 
+void output_result_of_calculation(Fractions calculation_result)
+{
+	std::cout << calculation_result;
+}
+
 int Fractions::Greatest_common_divisor(int a, int b)
 {
 	if (b == 0) {

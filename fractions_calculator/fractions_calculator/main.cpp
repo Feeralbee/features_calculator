@@ -1,40 +1,47 @@
 #include "operation.h"
-#include "notification.h"
+#include "output_strings_to_console.h"
 
 #include <iostream>
 
 
 int main() {
 
-	output_string_with_endl(notification_index::welcome_phrase);
+	output_notification_with_endl(notification_index::welcome_phrase);
 
 	try {
 		Fractions first_fraction;
+
 		Fractions second_fraction;
+
 		char arithmetic_action;
+
+		Fractions calculation_result;
+
 		std::cin >> first_fraction >> arithmetic_action >> second_fraction;
-		switch (arithmetic_action) {
-		case '+': 
-			output_string_without_endl(notification_index::result);
 
-			std::cout << first_fraction + second_fraction; 
-			break;
-		case '-': 
-			output_string_without_endl(notification_index::result);
-
-			std::cout << first_fraction - second_fraction; 
-			break;
-		case '*': 
-			output_string_without_endl(notification_index::result);
-
-			std::cout << first_fraction * second_fraction; 
-			break;
-		case '/': 
-			output_string_without_endl(notification_index::result);
-
-			std::cout << first_fraction / second_fraction; 
-			break;
+		if (arithmetic_action == '+')
+		{
+			calculation_result = first_fraction + second_fraction;
 		}
+
+		else if (arithmetic_action == '-')
+		{
+			calculation_result = first_fraction - second_fraction;
+		}
+
+		else if (arithmetic_action == '*')
+		{
+			calculation_result = first_fraction * second_fraction;
+		}
+
+		else if (arithmetic_action == '/')
+		{
+			calculation_result = first_fraction / second_fraction;
+		}
+
+		output_notification_without_endl(notification_index::result);
+
+		output_result_of_calculation(calculation_result);
 	}
 	catch (std::exception& ex) {
 		std::cout << ex.what() << std::endl;
