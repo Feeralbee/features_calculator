@@ -10,10 +10,10 @@ public:
 	Fractions();
 	Fractions(int new_numerator, int new_denominator);
 
-	int Greatest_common_divisor(int a, int b);
+	int greatest_common_divisor(int a, int b);
 
-	int Get_numerator() const;
-	int Get_denominator() const;
+	int get_numerator() const;
+	int get_denominator() const;
 
 private:
 	int numerator;
@@ -35,3 +35,5 @@ std::ostream& operator << (std::ostream& os, const Fractions& r);
 bool operator < (const Fractions & lhs, const Fractions & rhs);
 
 void output_result_of_calculation(Fractions calculation_result);
+
+

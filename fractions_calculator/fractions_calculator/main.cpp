@@ -1,4 +1,4 @@
-#include "operation.h"
+#include "Fractions.h"
 #include "output_strings_to_console.h"
 
 #include <iostream>
@@ -19,24 +19,20 @@ int main() {
 
 		std::cin >> first_fraction >> arithmetic_action >> second_fraction;
 
-		if (arithmetic_action == '+')
+		switch (arithmetic_action)
 		{
+		case '+':
 			calculation_result = first_fraction + second_fraction;
-		}
-
-		else if (arithmetic_action == '-')
-		{
+			break;
+		case '-':
 			calculation_result = first_fraction - second_fraction;
-		}
-
-		else if (arithmetic_action == '*')
-		{
+			break;
+		case '*':
 			calculation_result = first_fraction * second_fraction;
-		}
-
-		else if (arithmetic_action == '/')
-		{
+			break;
+		case '/':
 			calculation_result = first_fraction / second_fraction;
+			break;
 		}
 
 		output_notification_without_endl(notification_index::result);

@@ -15,7 +15,7 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <ClCompile Include="operation.cpp">
+    <ClCompile Include="Fractions.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ClCompile Include="output_strings_to_console.cpp">
@@ -23,7 +23,7 @@
     </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="operation.h">
+    <ClInclude Include="Fractions.h">
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="output_strings_to_console.h">
