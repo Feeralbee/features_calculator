@@ -35,7 +35,7 @@ int Fractions::get_denominator() const
 Fractions::Fractions(int new_numerator, int new_denominator)
 {
 	if (new_denominator == 0) {
-		throw std::invalid_argument("Invalid argument");
+		throw std::invalid_argument("Invalid argument in denominator");
 	}
 	const int gcd = greatest_common_divisor(new_numerator, new_denominator);
 	numerator = new_numerator / gcd;
