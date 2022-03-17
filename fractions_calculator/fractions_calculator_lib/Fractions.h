@@ -15,14 +15,15 @@ public:
 	int get_numerator() const;
 	int get_denominator() const;
 
+	Fractions operator + (const Fractions& rhs);
+
+	Fractions operator - (const Fractions& rhs);
+
 private:
 	int numerator;
 	int denominator;
 };
 
-Fractions operator + (const Fractions& lhs, const Fractions& rhs);
-
-Fractions operator - (const Fractions& lhs, const Fractions& rhs);
 
 Fractions operator * (const Fractions& lhs, const Fractions& rhs);
 

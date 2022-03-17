@@ -47,25 +47,26 @@ Fractions::Fractions(int new_numerator, int new_denominator)
 }
 
 
-Fractions operator + (const Fractions& lhs, const Fractions& rhs)
+Fractions Fractions::operator + (const Fractions& rhs)
 {
 	return{
-		lhs.get_numerator() * rhs.get_denominator() + rhs.get_numerator() * lhs.get_denominator(),
-		lhs.get_denominator() * rhs.get_denominator()
+		this->numerator * rhs.get_denominator() + rhs.get_numerator() * this->denominator,
+		this->denominator * rhs.get_denominator()
 	};
 }
 
-Fractions operator - (const Fractions& lhs, const Fractions& rhs)
+Fractions Fractions::operator - (const Fractions& rhs)
 {
 	return{
-		lhs.get_numerator() * rhs.get_denominator() - rhs.get_numerator() * lhs.get_denominator(),
-		lhs.get_denominator() * rhs.get_denominator()
+		this->numerator * rhs.get_denominator() - rhs.get_numerator() * this->denominator,
+		this->denominator * rhs.get_denominator()
 	};
 }
 
 Fractions operator * (const Fractions& lhs, const Fractions& rhs)
 {
-	return{
+	return
+	{
 		lhs.get_numerator() * rhs.get_numerator(),
 		lhs.get_denominator() * rhs.get_denominator()
 	};
