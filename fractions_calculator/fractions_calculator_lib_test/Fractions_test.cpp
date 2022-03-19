@@ -6,13 +6,7 @@
 TEST(num_and_denum, get_num_and_get_denum)
 {
 	ASSERT_EQ(Fractions().get_denominator(), 1);
-	ASSERT_EQ(Fractions().get_numerator(), 0);
-}
-
-TEST(greatest_common_division_test, get_greatest_common_division)
-{
-	ASSERT_EQ(Fractions().greatest_common_divisor(1, 0), 1);
-	ASSERT_EQ(Fractions().greatest_common_divisor(0, 1), 1);
+	ASSERT_EQ(Fractions().get_numerator(), 1);
 }
 
 TEST (new_num_should_be_pozitive, if_input_pozitive_num_and_denum)
