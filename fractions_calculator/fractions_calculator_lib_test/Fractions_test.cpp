@@ -13,20 +13,40 @@ TEST(greatest_common_division_test, get_greatest_common_division)
 {
 	ASSERT_EQ(Fractions().greatest_common_divisor(1, 0), 1);
 	ASSERT_EQ(Fractions().greatest_common_divisor(0, 1), 1);
-
 }
 
-TEST (Fraction, get_new_numerator_and_new_denominator)
+TEST (new_num_should_be_pozitive, if_input_pozitive_num_and_denum)
 {
-	ASSERT_EQ(Fractions(16, 4).get_numerator(), 4);
-	ASSERT_EQ(Fractions(16, 4).get_denominator(), 1);
+	Fractions pozitive_num(16, 4);
+	Fractions pozitive_denum(16, 4);
 
-	ASSERT_EQ(Fractions(-16, -4).get_numerator(), 4);
-	ASSERT_EQ(Fractions(-16, -4).get_denominator(), 1);
+	ASSERT_EQ(pozitive_num.get_numerator(), 4);
+	ASSERT_EQ(pozitive_denum.get_denominator(), 1);
+}
 
-	ASSERT_EQ(Fractions(-16, 4).get_numerator(), -4);
-	ASSERT_EQ(Fractions(-16, 4).get_denominator(), 1);
+TEST(new_num_should_be_pozitive, if_input_negative_num_and_denum)
+{
+	Fractions negative_num(-16, -4);
+	Fractions negative_denum(-16, -4);
 
-	ASSERT_EQ(Fractions(16, -4).get_numerator(), -4);
-	ASSERT_EQ(Fractions(16, -4).get_denominator(), 1);
+	ASSERT_EQ(negative_num.get_numerator(), 4);
+	ASSERT_EQ(negative_denum.get_denominator(), 1);
+}
+
+TEST(new_num_should_be_negative, if_input_negative_num)
+{
+	Fractions negative_num(-16, 4);
+	Fractions pozitive_denum(-16, 4);
+
+	ASSERT_EQ(negative_num.get_numerator(), -4);
+	ASSERT_EQ(pozitive_denum.get_denominator(), 1);
+}
+
+TEST(new_num_should_be_negative, if_input_negative_denum)
+{
+	Fractions pozitive_num(16, -4);
+	Fractions negative_denum(16, -4);
+
+	ASSERT_EQ(pozitive_num.get_numerator(), -4);
+	ASSERT_EQ(negative_denum.get_denominator(), 1);
 }

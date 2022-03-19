@@ -1,36 +1,10 @@
 #include "Fractions.h"
 
-void output_result_of_calculation(Fractions calculation_result)
-{
-	std::cout << calculation_result;
-}
-
-int Fractions::greatest_common_divisor(int numerator, int denumenator)
-{
-	if (denumenator == 0) {
-		return numerator;
-	}
-	else {
-		return greatest_common_divisor(denumenator, numerator % denumenator);
-	}
-}
-
 Fractions::Fractions()
 {
-	numerator = 0;
+	numerator = 1;
 	denominator = 1;
 }
-
-int Fractions::get_numerator() const
-{
-	return numerator;
-}
-
-int Fractions::get_denominator() const
-{
-	return denominator;
-}
-
 
 Fractions::Fractions(int new_numerator, int new_denominator)
 {
@@ -46,8 +20,32 @@ Fractions::Fractions(int new_numerator, int new_denominator)
 	}
 }
 
+void output_result_of_calculation(Fractions calculation_result)
+{
+	std::cout << calculation_result;
+}
 
-Fractions Fractions::operator + (const Fractions& rhs)
+int Fractions::greatest_common_divisor(int numerator, int denumenator)
+{
+	if (denumenator == 0) {
+		return numerator;
+	}
+	else {
+		return greatest_common_divisor(denumenator, numerator % denumenator);
+	}
+}
+
+int Fractions::get_numerator() const
+{
+	return numerator;
+}
+
+int Fractions::get_denominator() const
+{
+	return denominator;
+}
+
+Fractions Fractions::operator + (const Fractions& rhs) const
 {
 	return{
 		this->numerator * rhs.get_denominator() + rhs.get_numerator() * this->denominator,
@@ -55,7 +53,7 @@ Fractions Fractions::operator + (const Fractions& rhs)
 	};
 }
 
-Fractions Fractions::operator - (const Fractions& rhs)
+Fractions Fractions::operator - (const Fractions& rhs) const
 {
 	return{
 		this->numerator * rhs.get_denominator() - rhs.get_numerator() * this->denominator,
@@ -63,24 +61,29 @@ Fractions Fractions::operator - (const Fractions& rhs)
 	};
 }
 
-Fractions operator * (const Fractions& lhs, const Fractions& rhs)
+Fractions Fractions::operator * (const Fractions& rhs) const
 {
 	return
 	{
-		lhs.get_numerator() * rhs.get_numerator(),
-		lhs.get_denominator() * rhs.get_denominator()
+		this->numerator * rhs.get_numerator(),
+		this->denominator * rhs.get_denominator()
 	};
 }
 
-Fractions operator / (const Fractions& lhs, const Fractions& rhs)
+Fractions Fractions::operator / (const Fractions& rhs) const
 {
-	if (lhs.get_numerator() == 0) {
+	if (this->numerator == 0) {
 		throw std::domain_error("Division by zero");
 	};
 	if (rhs.get_numerator() == 0) {
 		throw std::domain_error("Division by zero");
 	};
-	return lhs * Fractions(rhs.get_denominator(), rhs.get_numerator());
+	return *this * Fractions(rhs.get_denominator(), rhs.get_numerator());
+}
+
+bool Fractions::operator < (const Fractions& rhs) const
+{
+	return (*this - rhs).get_numerator() < 0;
 }
 
 std::istream& operator >> (std::istream& is, Fractions& r)
@@ -99,7 +102,4 @@ std::ostream& operator << (std::ostream& os, const Fractions& r)
 	return os << r.get_numerator() << '/' << r.get_denominator();
 }
 
-bool operator < (const Fractions& lhs, const Fractions& rhs)
-{
-	return (lhs - rhs).get_numerator() < 0;
-}
+
