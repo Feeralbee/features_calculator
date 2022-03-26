@@ -160,11 +160,11 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="..\packages\gmock.1.11.0\lib\native\src\gtest\src\gtest_main.cc" />
-    <ClCompile Include="Fractions_operator_addition_test.cpp" />
-    <ClCompile Include="Fractions_test.cpp" />
-    <ClCompile Include="Fraction_operator_division_test.cpp" />
-    <ClCompile Include="Fraction_operator_multiplication_test.cpp" />
-    <ClCompile Include="Fraction_operator_subtraction_test.cpp" />
+    <ClCompile Include="fractions_operator_addition_test.cpp" />
+    <ClCompile Include="fractions_test.cpp" />
+    <ClCompile Include="fraction_operator_division_test.cpp" />
+    <ClCompile Include="fraction_operator_multiplication_test.cpp" />
+    <ClCompile Include="fraction_operator_subtraction_test.cpp" />
     <ClCompile Include="output_strings_to_console_tests.cpp" />
   </ItemGroup>
   <ItemGroup>

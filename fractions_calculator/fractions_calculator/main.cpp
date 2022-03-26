@@ -1,4 +1,4 @@
-#include "Fractions.h"
+#include "fractions.h"
 #include "output_strings_to_console.h"
 
 #include <iostream>

@@ -1,4 +1,4 @@
-#include "Fractions.h"
+#include "fractions.h"
 
 Fractions::Fractions()
 {
